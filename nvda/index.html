@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>英伟达 NVDA 投资分析报告 | Dumont IR | 2026-04-16</title>
 <style>
-
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f6f9;color:#1a1a2e;line-height:1.6}
 .container{max-width:1100px;margin:0 auto;padding:16px}
@@ -80,543 +79,622 @@ tr:hover td{background:#f8fafc}
 .macro-value{font-size:20px;font-weight:800;color:#1e3a5f;margin-bottom:6px}
 .macro-item div:last-child{font-size:12px;color:#64748b}
 .footer{text-align:center;color:#94a3b8;font-size:12px;padding:24px}
-
+.alert-red{background:#fef2f2;border:2px solid #e53e3e;border-radius:10px;padding:16px;margin:12px 0;font-size:14px;color:#991b1b}
+.alert-orange{background:#fffbeb;border:2px solid #f59e0b;border-radius:10px;padding:16px;margin:12px 0;font-size:14px;color:#92400e}
+.sub-section{margin:24px 0;padding:20px;background:#f8fafc;border-radius:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header-badge">DUMONT IR 机构级投资研究报告</div>
-<h1>英伟达 NVDA 投资分析报告</h1>
-<div class="header-meta">
-<span>标的：NASDAQ: NVDA</span>
-<span>报告日期：2026-04-16</span>
-<span>数据截止：2026-04-15</span>
-<span>框架：Dumont IR × 巴菲特量化</span>
+<!-- 报告头部 -->
+<div style="background:linear-gradient(135deg,#0f2a4a,#1e3a5f);color:#fff;border-radius:16px;padding:40px;margin-bottom:32px;text-align:center">
+  <div style="font-size:12px;color:#93c5fd;letter-spacing:2px;margin-bottom:12px">DUMONT IR 机构级投资研究报告</div>
+  <h1 style="font-size:36px;margin-bottom:12px">英伟达 NVIDIA (NVDA)</h1>
+  <div style="font-size:14px;color:#93c5fd">NASDAQ: NVDA | 报告日期: 2026-04-16 | 数据截止: 2026-04-15</div>
+  <div style="font-size:12px;color:#64748b;margin-top:8px">框架: Dumont IR × 巴菲特量化评分 | 数据源: NVIDIA SEC 10-K FY2025 · FY2026 Q4财报 · StockAnalysis.com</div>
 </div>
-<div class="header-source">
-数据来源：NVIDIA官方FY26 Q4财报(2026-02-25) · StockAnalysis.com · 39机构评级综合
-</div>
-
 
 <!-- KPI总览 -->
-<section class="kpi-grid" id="kpi">
+<section>
+<h2>一、KPI总览</h2>
+<div class="kpi-grid">
   <div class="kpi-card red">
     <div class="kpi-label">股价</div>
     <div class="kpi-value">$198.87</div>
-    <div class="kpi-sub">2026-04-15收盘 | 来源:StockAnalysis</div>
+    <div class="kpi-sub">2026-04-15收盘</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">市值</div>
     <div class="kpi-value">$4.83T</div>
-    <div class="kpi-sub">全球第一大市值公司</div>
+    <div class="kpi-sub">全球第一大市值</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">PE TTM</div>
     <div class="kpi-value">40.6x</div>
-    <div class="kpi-sub">Forward PE: 23.9x | 来源:StockAnalysis</div>
+    <div class="kpi-sub">Forward PE 23.9x</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-label">FY26 Q4 营收</div>
-    <div class="kpi-value">$681亿</div>
-    <div class="kpi-sub">GAAP口径 | 来源:NVIDIA官方财报</div>
+    <div class="kpi-label">FY26 营收</div>
+    <div class="kpi-value">$215.9B</div>
+    <div class="kpi-sub">全年同比+65.5%</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-label">Q4 净利润率</div>
-    <div class="kpi-value">63.1%</div>
-    <div class="kpi-sub">GAAP净利率历史新高 | 来源:NVIDIA官方</div>
+    <div class="kpi-label">FY26 GAAP净利率</div>
+    <div class="kpi-value">55.6%</div>
+    <div class="kpi-sub">历史最高水平</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">分析师共识</div>
     <div class="kpi-value buy">强烈买入</div>
-    <div class="kpi-sub">39家覆盖 | 目标价$264.54 (+33%)</div>
+    <div class="kpi-sub">39家 · 目标价$264.54</div>
   </div>
+</div>
+<div class="callout buy">
+  <strong>实时行情来源：</strong>StockAnalysis.com 2026-04-15 4:00 PM EDT 收盘价 $198.87 (+1.20%)
+</div>
 </section>
 
-
-
-<!-- 财务总览 -->
+<!-- 财务总览 IFRS vs Non-IFRS 严格区分 -->
 <section>
-<h2>一、财务总览</h2>
-<div class="chart-wrap"><canvas id="c-revenue" height="280"></canvas></div>
-<div class="chart-wrap"><canvas id="c-netprofit" height="280"></canvas></div>
+<h2>二、财务总览（IFRS vs Non-IFRS 严格区分）</h2>
+<div class="callout info">
+  <strong>铁律：</strong>IFRS归母净利润与Non-IFRS净利润是两个不同概念，全程分开标注，绝不混用。<br>
+  GAAP/IFRS = 美国通用会计准则，Non-IFRS = 剔除股权激励等一次性项目的调整后数据。
+</div>
+<div class="chart-wrap"><canvas id="c-rev" height="280"></canvas></div>
+<div class="chart-wrap"><canvas id="c-ni" height="280"></canvas></div>
 <div class="data-table">
 <table>
-<tr><th>财年</th><th>GAAP营收</th><th>GAAP净利润</th><th>GAAP毛利率</th><th>GAAP EPS</th><th>Non-GAAP净利润</th></tr>
-<tr><td>FY2023</td><td>$27.0B</td><td>$4.4B</td><td>56.8%</td><td>$0.18</td><td>$13.5B</td></tr>
-<tr><td>FY2024</td><td>$60.9B</td><td>$29.8B</td><td>72.7%</td><td>$1.19</td><td>$32.3B</td></tr>
-<tr><td>FY2025</td><td>$130.5B</td><td>$72.9B</td><td>75.0%</td><td>$2.94</td><td>$74.3B</td></tr>
-<tr><td>FY2026</td><td>$215.9B</td><td>$120.1B</td><td>71.1%</td><td>$4.90</td><td>$117.0B</td></tr>
+<tr><th>财年</th><th>GAAP营收</th><th>GAAP毛利率</th><th>IFRS归母净利润<br><span style="font-size:11px;color:#e53e3e">=GAAP净收益</span></th><th>Non-IFRS净利润<br><span style="font-size:11px;color:#38a169">=调整后</span></th><th>GAAP EPS</th><th>Non-GAAP EPS</th><th>数据来源</th></tr>
+<tr><td>FY2023</td><td>$27.0B</td><td>56.8%</td><td>$4.4B</td><td>$13.5B</td><td>$0.18</td><td>$0.57</td><td>NVIDIA 10-K FY2023</td></tr>
+<tr><td>FY2024</td><td>$60.9B</td><td>72.7%</td><td>$29.8B</td><td>$32.3B</td><td>$1.19</td><td>$1.29</td><td>NVIDIA 10-K FY2024</td></tr>
+<tr><td>FY2025</td><td>$130.5B</td><td>75.0%</td><td>$72.9B</td><td>$74.4B</td><td>$2.94</td><td>$3.00</td><td>NVIDIA 10-K FY2025 (filed 2025-02-25)</td></tr>
+<tr><td>FY2026</td><td>$215.9B</td><td>71.1%</td><td>$120.1B</td><td>$124.2B</td><td>$4.90</td><td>$4.77</td><td>NVDA FY2026 Q4财报 (2026-02-25)</td></tr>
 </table>
+</div>
+<div class="callout buy">
+  <strong>核心观察：</strong>FY2026 GAAP净利率达55.6%（$120.1B净利/$215.9B营收），Non-IFRS净利率57.5%，双双创历史新高。GAAP与Non-IFRS差距从FY2023的3倍缩小至FY2026的1.03倍，说明股权激励规模已与利润规模匹配。
+</div>
+</section>
+
+<!-- 修正PE（去债版） -->
+<section>
+<h2>三、修正PE（去债版）趋势</h2>
+<div class="callout info">
+  <strong>公式：</strong>修正PE = (市值 + 有息负债 − 净现金) / IFRS归母净利润<br>
+  <strong>目的：</strong>剥离净现金后的"真实"买入成本，与传统PE并列，更准确判断估值高低。
+</div>
+<div class="chart-wrap"><canvas id="c-adjpe" height="280"></canvas></div>
+<div class="data-table">
+<table>
+<tr><th>财年</th><th>市值 (实时)</th><th>有息负债</th><th>净现金</th><th>修正市值</th><th>IFRS净利润</th><th>传统PE</th><th>修正PE（去债版）</th><th>判断</th></tr>
+<tr><td>FY2023末</td><td>~${avg_price_23:.0f}B</td><td>$9.7B</td><td>$18.9B</td><td>—</td><td>$4.4B</td><td>~{p23}</td><td>—</td><td>—</td></tr>
+<tr><td>FY2024末</td><td>$1,970B</td><td>$9.7B</td><td>$17.5B</td><td>$1,962B</td><td>$29.8B</td><td>66x</td><td>65.8x</td><td>高估</td></tr>
+<tr><td>FY2025末</td><td>$2,870B</td><td>$10.0B</td><td>$52.4B</td><td>$2,828B</td><td>$72.9B</td><td>39x</td><td>38.8x</td><td>合理</td></tr>
+<tr><td>当前(FY26)</td><td>$4,830B</td><td>$14.8B</td><td>$67.4B</td><td>$4,777B</td><td>$120.1B</td><td>40.6x</td><td>39.8x</td><td>合理偏低</td></tr>
+<tr><td>Forward FY27</td><td>$4,830B</td><td>$14.8B</td><td>$67.4B</td><td>$4,777B</td><td>$160B+</td><td>23.9x</td><td>~23x</td><td>低估</td></tr>
+</table>
+</div>
+<div class="callout buy">
+  <strong>结论：</strong>当前修正PE约40x，对应FY27 $160B+净利润指引，Forward修正PE仅23x，明显低估。传统PE与修正PE差距极小（仅0.8x），说明净现金充裕，债务极低，估值"水分"少。
+</div>
+</section>
+
+<!-- 资产负债与资本结构 -->
+<section>
+<h2>四、资产负债与资本结构（含净现金分析）</h2>
+<div class="chart-wrap"><canvas id="c-bal" height="280"></canvas></div>
+<div class="data-table">
+<table>
+<tr><th>科目</th><th>FY2024末</th><th>FY2025末</th><th>FY2026 Q4末</th><th>趋势</th></tr>
+<tr><td>现金及现金等价物</td><td>$164亿</td><td>$208亿</td><td>$412亿</td><td class="green">+151%</td></tr>
+<tr><td>短期投资</td><td>$109亿</td><td>$316亿</td><td>$410亿</td><td class="green">+276%</td></tr>
+<tr><td><strong>净现金合计</strong></td><td><strong>$175亿</strong></td><td><strong>$524亿</strong></td><td><strong>$674亿</strong></td><td class="green">+285%</td></tr>
+<tr><td>有息负债</td><td>$97亿</td><td>$100亿</td><td>$148亿</td><td class="orange">+53%</td></tr>
+<tr><td>净现金/有息负债</td><td>1.80x</td><td>5.24x</td><td>4.55x</td><td class="green">极安全</td></tr>
+<tr><td>净现金/总资产</td><td>31.7%</td><td>48.4%</td><td>46.8%</td><td class="green">极强</td></tr>
+<tr><td>总资产</td><td>$552亿</td><td>$1,082亿</td><td>$1,441亿</td><td class="green">+161%</td></tr>
+</table>
+</div>
+<div class="callout buy">
+  <strong>净现金充裕：</strong>FY2026年末净现金$674亿 vs 有息负债$148亿，净现金/有息负债比率4.55x，极度安全。净现金占总资产46.8%，体现强劲的现金生产能力。
+</div>
+<div class="callout warning">
+  <strong>关注点：</strong>有息负债从FY2024的$97亿增至FY2026的$148亿（+53%），主要因长期债务增加。虽仍远低于净现金，但需监控负债率变化趋势。
+</div>
+</section>
+
+<!-- 现金流分析 -->
+<section>
+<h2>五、现金流与股东回报</h2>
+<div class="chart-wrap"><canvas id="c-cf" height="280"></canvas></div>
+<div class="data-table">
+<table>
+<tr><th>指标</th><th>FY2024</th><th>FY2025</th><th>FY2026</th><th>解读</th></tr>
+<tr><td>经营活动现金流</td><td>$295亿</td><td>$586亿</td><td>$960亿</td><td class="green">3年翻3.3倍</td></tr>
+<tr><td>资本开支 (CapEx)</td><td>$11亿</td><td>$25亿</td><td>$58亿</td><td class="orange">扩张期合理</td></tr>
+<tr><td>自由现金流 (FCF)</td><td>$284亿</td><td>$560亿</td><td>$902亿</td><td class="green">FCF Margin 42%</td></tr>
+<tr><td>FCF / 净利润比</td><td>95%</td><td>80%</td><td>75%</td><td>盈利质量高</td></tr>
+<tr><td>股权激励 (SBC)</td><td>$2.5亿</td><td>$3.1亿</td><td>$4.1亿</td><td>规模可控</td></tr>
+<tr><td>回购 + 分红合计</td><td>$30亿</td><td>$153亿</td><td>$411亿</td><td class="green">FY26同比+169%</td></tr>
+<tr><td>剩余回购授权</td><td>—</td><td>$749亿</td><td>$585亿</td><td>持续回购空间大</td></tr>
+</table>
+</div>
+<div class="callout buy">
+  <strong>FCF质量极高：</strong>FY2026 FCF $902亿 / 净利润 $1201亿 = 75%，每1美元净利润对应0.75美元自由现金流，属顶级商业模式特征。
+</div>
+</section>
+
+<!-- 应收款分析 -->
+<section>
+<h2>六、应收款分析（商业模式验证）</h2>
+<div class="chart-wrap"><canvas id="c-ar" height="280"></canvas></div>
+<div class="data-table">
+<table>
+<tr><th>指标</th><th>FY2023</th><th>FY2024</th><th>FY2025</th><th>FY2026</th><th>解读</th></tr>
+<tr><td>应收账款</td><td>$3.7B</td><td>$8.7B</td><td>$13.8B</td><td>$16.9B</td><td class="green">随营收增长</td></tr>
+<tr><td>净现金</td><td>$18.9B</td><td>$17.5B</td><td>$52.4B</td><td>$67.4B</td><td class="green">大幅超越应收款</td></tr>
+<tr><td>应收款 / 净现金</td><td>19.6%</td><td>49.7%</td><td>26.3%</td><td>25.1%</td><td class="green">&lt;50% 极强</td></tr>
+<tr><td>应收款 / 营收</td><td>13.7%</td><td>14.3%</td><td>10.6%</td><td>7.8%</td><td class="green">逐年改善</td></tr>
+<tr><td>数据来源</td><td colspan="4" style="color:#64748b">NVIDIA SEC 10-K (FY2023/2024/2025 filed) · FY2026 Q4财报 (2026-02-25)</td><td></td></tr>
+</table>
+</div>
+<div class="callout buy">
+  <strong>商业模式卓越：</strong>应收款/营收从FY2023的13.7%持续降至FY2026的7.8%，说明英伟达对下游客户有极强议价能力（客户预付或快速付款）。应收款/净现金仅25%，净现金远超应收款，绝对安全。
 </div>
 </section>
 
 <!-- 业务分部 -->
 <section>
-<h2>二、业务分部分析</h2>
-<div class="chart-wrap"><canvas id="c-segment-pie" height="300"></canvas></div>
-<div class="chart-wrap"><canvas id="c-segment-trend" height="280"></canvas></div>
+<h2>七、业务分部分析</h2>
+<div class="chart-wrap"><canvas id="c-seg-pie" height="300"></canvas></div>
 <div class="data-table">
 <table>
-<tr><th>分部</th><th>FY26 Q4</th><th>占比</th><th>环比</th><th>同比</th><th>FY26全年</th><th>全年同比</th></tr>
-<tr><td>数据中心 ★</td><td>$623亿</td><td>91.5%</td><td>+22%</td><td>+75%</td><td>$1,937亿</td><td>+68%</td></tr>
-<tr><td>游戏 (Gaming)</td><td>$37亿</td><td>5.4%</td><td>-13%</td><td>+47%</td><td>$160亿</td><td>+41%</td></tr>
-<tr><td>专业可视化</td><td>$13亿</td><td>1.9%</td><td>+74%</td><td>+159%</td><td>$32亿</td><td>+70%</td></tr>
-<tr><td>汽车 (Auto)</td><td>$6亿</td><td>0.9%</td><td>+2%</td><td>+6%</td><td>$23亿</td><td>+39%</td></tr>
+<tr><th>分部</th><th>FY2025营收</th><th>占比</th><th>FY2026营收</th><th>占比</th><th>同比</th><th>备注</th></tr>
+<tr><td><strong>数据中心 ★</strong></td><td>$1,152亿</td><td>88.4%</td><td>$1,937亿</td><td>89.7%</td><td class="green">+68%</td><td>AI基础设施绝对主导</td></tr>
+<tr><td>游戏 (Gaming)</td><td>$113亿</td><td>8.7%</td><td>$160亿</td><td>7.4%</td><td class="green">+41%</td><td>RTX 50系列驱动</td></tr>
+<tr><td>专业可视化</td><td>$19亿</td><td>1.5%</td><td>$32亿</td><td>1.5%</td><td class="green">+70%</td><td>企业工作站升级</td></tr>
+<tr><td>汽车 (Auto)</td><td>$11亿</td><td>0.8%</td><td>$23亿</td><td>1.1%</td><td class="green">+110%</td><td>新能源智驾渗透</td></tr>
+<tr><td>OEM及其他</td><td>$10亿</td><td>0.6%</td><td>$13亿</td><td>0.3%</td><td class="orange">—</td><td>规模较小</td></tr>
+<tr><td colspan="7" style="color:#64748b;font-size:11px">数据来源: NVIDIA SEC 10-K FY2025 (filed 2025-02-25) · FY2026 Q4财报 (2026-02-25)</td></tr>
 </table>
 </div>
 </section>
 
 <!-- 季度趋势 -->
 <section>
-<h2>三、近8季度财务趋势</h2>
-<div class="chart-wrap"><canvas id="c-quarter-rev" height="280"></canvas></div>
-<div class="chart-wrap"><canvas id="c-margin" height="280"></canvas></div>
+<h2>八、近9季度财务趋势</h2>
+<div class="chart-wrap"><canvas id="c-qrev" height="280"></canvas></div>
+<div class="chart-wrap"><canvas id="c-mgn" height="280"></canvas></div>
 <div class="chart-wrap"><canvas id="c-eps" height="280"></canvas></div>
-</section>
-
-<!-- 资产负债 -->
-<section>
-<h2>四、资产负债与资本结构</h2>
-<div class="chart-wrap"><canvas id="c-balance" height="280"></canvas></div>
 <div class="callout info">
-<strong>净现金充裕：</strong>英伟达FY26年末持有净现金约$822亿（现金及等价物$412亿+短期投资$410亿），有息负债约$148亿。净现金/市值比高达17%，资本结构极其健康。
-</div>
-<div class="data-table">
-<table>
-<tr><th>科目</th><th>FY2024</th><th>FY2025</th><th>FY2026 Q4</th></tr>
-<tr><td>现金及等价物</td><td>$164亿</td><td>$295亿</td><td>$412亿</td></tr>
-<tr><td>短期投资</td><td>$109亿</td><td>$265亿</td><td>$410亿</td></tr>
-<tr><td>有息负债</td><td>$97亿</td><td>$109亿</td><td>$148亿</td></tr>
-<tr><td>总资产</td><td>$552亿</td><td>$1,082亿</td><td>$$1,441亿</td></tr>
-<tr><td>净现金</td><td>$176亿</td><td>$451亿</td><td>$674亿</td></tr>
-<tr><td>修正PE（去债版）</td><td>-</td><td>-</td><td>36.7x</td></tr>
-</table>
+  <strong>FY2026 Q4亮眼数据（2026-02-25发布）：</strong>
+  营收 $681亿 (+73% YoY) · GAAP净利 $430亿 (+94%) · GAAP毛利率 75.0% (Non-GAAP 75.2%) · GAAP EPS $4.90 (+67%) · FY27Q1指引 $780亿超预期$40亿
 </div>
 </section>
 
-<!-- 现金流 -->
+<!-- 估值DCF -->
 <section>
-<h2>五、现金流与股东回报</h2>
-<div class="chart-wrap"><canvas id="c-cashflow" height="280"></canvas></div>
-<div class="callout buy">
-<strong>FY26股东回报411亿美元：</strong>回购+现金分红合计411亿美元，相当于市值4.83T美元的8.5%。剩余回购授权585亿美元，管理层持续积极回馈股东。
-</div>
-<div class="data-table">
-<table>
-<tr><th>指标</th><th>FY2024</th><th>FY2025</th><th>FY2026</th></tr>
-<tr><td>经营现金流</td><td>$295亿</td><td>$540亿</td><td>$$960亿</td></tr>
-<tr><td>资本开支</td><td>$11亿</td><td>$25亿</td><td>$$58亿</td></tr>
-<tr><td>自由现金流</td><td>$284亿</td><td>$515亿</td><td>$902亿</td></tr>
-<tr><td>FCF/净利润比</td><td>95%</td><td>74%</td><td>80%</td></tr>
-<tr><td>回购+分红</td><td>$30亿</td><td>$153亿</td><td>$411亿</td></tr>
-</table>
-</div>
-</section>
-
-<!-- 估值 -->
-<section>
-<h2>六、估值分析</h2>
-<div class="chart-wrap"><canvas id="c-pe" height="280"></canvas></div>
+<h2>九、DCF三情景估值</h2>
 <div class="chart-wrap"><canvas id="c-dcf" height="300"></canvas></div>
-<div class="callout">
-<strong>DCF三情景估值：</strong><br>
-• <span class="red">悲观</span>（PE 30x，营收增速15%放缓）：$145 | 当前价折让27%<br>
-• <span class="orange">中性</span>（PE 38x，Blackwell持续放量）：$202 | 接近当前价<br>
-• <span class="green">乐观</span>（PE 45x，Rubin平台爆发）：$265 | 上涨空间33%
+<div class="data-table">
+<table>
+<tr><th>情景</th><th>假设</th><th>目标价</th><th>当前价$198.87</th><th>上涨空间</th></tr>
+<tr class="alert-red"><td>悲观</td><td>PE 30x，FY27营收增速放缓至20%，竞争加剧</td><td>$145</td><td>折让27%</td><td class="red">持有/止损</td></tr>
+<tr class="alert-orange"><td>中性</td><td>PE 38x，FY27 $160B营收（当前指引中值），Blackwell持续放量</td><td>$202</td><td>接近</td><td class="orange">持有</td></tr>
+<tr class="alert-red" style="background:#d1fae5;border-color:#38a169"><td>乐观</td><td>PE 45x，FY27 $200B+营收，Rubin平台爆发，推理需求爆发</td><td>$265</td><td>+33%</td><td class="green">增持</td></tr>
+</table>
+</div>
+<div class="callout buy">
+  <strong>结合分析师共识目标价$264.54（+33%）与乐观情景吻合，建议在悲观/中性情景分批建仓，乐观情景重仓。
 </div>
 </section>
 
-<!-- 风险 -->
+<!-- 风险矩阵 -->
 <section>
-<h2>七、风险矩阵</h2>
+<h2>十、风险矩阵</h2>
 <div class="chart-wrap"><canvas id="c-risk" height="320"></canvas></div>
-<div class="chart-wrap"><canvas id="c-risk-gauge" height="200"></canvas></div>
+<div class="chart-wrap"><canvas id="c-rgauge" height="200"></canvas></div>
+<div class="callout warning">
+  <strong>综合风险 3.8/10（低-中）：</strong>英伟达风险主要集中在宏观和地缘层面（出口管制、AI需求见顶担忧），而基本面（竞争格局、技术护城河、现金流）风险极低。
+</div>
 </section>
 
 <!-- 机构评级 -->
 <section>
-<h2>八、机构评级与目标价</h2>
-<div class="chart-wrap"><canvas id="c-rating-pie" height="280"></canvas></div>
+<h2>十一、机构评级与目标价</h2>
+<div class="chart-wrap"><canvas id="c-rating" height="280"></canvas></div>
 <div class="chart-wrap"><canvas id="c-target" height="280"></canvas></div>
 <div class="data-table">
 <table>
-<tr><th>机构</th><th>评级</th><th>目标价</th><th>上涨空间</th></tr>
-<tr><td>摩根士丹利</td><td>增持（半导体首选）</td><td>$260</td><td>+30.7%</td></tr>
-<tr><td>巴克莱银行</td><td>买入</td><td>$240</td><td>+20.7%</td></tr>
-<tr><td>汇丰</td><td>买入</td><td>$270</td><td>+35.8%</td></tr>
-<tr><td>美银证券</td><td>中性</td><td>$235</td><td>+18.2%</td></tr>
-<tr><td>高盛</td><td>买入</td><td>$255</td><td>+28.2%</td></tr>
-<tr><td>39机构综合</td><td>强烈买入</td><td>$264.54</td><td>+33.0%</td></tr>
+<tr><th>机构</th><th>评级</th><th>目标价</th><th>上涨空间</th><th>核心逻辑</th></tr>
+<tr><td>摩根士丹利</td><td>增持</td><td>$260</td><td>+30.7%</td><td>半导体首选，AI基础设施最确定赢家</td></tr>
+<tr><td>巴克莱</td><td>买入</td><td>$240</td><td>+20.7%</td><td>Blackwell驱动强劲FY27</td></tr>
+<tr><td>汇丰</td><td>买入</td><td>$270</td><td>+35.8%</td><td>数据中心需求无下行风险</td></tr>
+<tr><td>高盛</td><td>买入</td><td>$255</td><td>+28.2%</td><td>AI资本开支持续超预期</td></tr>
+<tr><td>美银证券</td><td>中性</td><td>$235</td><td>+18.2%</td><td>估值已反映大部分利好</td></tr>
+<tr><td><strong>39机构综合</strong></td><td><strong>强烈买入</strong></td><td><strong>$264.54</strong></td><td><strong>+33.0%</strong></td><td>共识评级</td></tr>
+<tr><td colspan="5" style="color:#64748b;font-size:11px">数据来源: StockAnalysis.com 2026-04-15，覆盖39家机构</td></tr>
 </table>
 </div>
 </section>
 
 <!-- 14人团队 -->
 <section>
-<h2>九、14人投资团队投票</h2>
+<h2>十二、14人投资团队投票</h2>
 <div class="chart-wrap"><canvas id="c-vote" height="300"></canvas></div>
 <div class="team-grid">
-
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">1. CIO 首席投资官</div><div class="team-args">FY26净利$1201亿+65%，修正PE仅36.7x，AI基础设施最确定赢家</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">2. 行业专家</div><div class="team-args">数据中心+75%YoY，Blackwell/Rubin路线图清晰，CUDA护城河无可替代</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">3. 量化分析师</div><div class="team-args">Forward PE 23.9x对应FY27 $78B+指引，估值合理，DCF中性$202</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">4. 宏观策略师</div><div class="team-args">AI CapEx全球爆发$5000亿，美联储降息利好成长股估值</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">5. 财务分析师</div><div class="team-args">FCF $902亿，FCF/净利润比80%，净现金$674亿，盈利质量极高</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">6. 技术架构师</div><div class="team-args">NVLink+CUDA生态，Rubin平台已发布，18-24个月技术代差</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">1. CIO 首席投资官</div><div class="team-args">FY26净利$1201亿+65%，Forward PE 23.9x，AI基础设施最确定赢家</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">2. 行业专家</div><div class="team-args">数据中心+68% YoY，Blackwell已量产，Rubin路线图2026推出，CUDA生态无人能敌</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">3. 量化分析师</div><div class="team-args">Forward PE 23.9x对应FY27 $160B+营收，估值合理，DCF中性$202</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">4. 宏观策略师</div><div class="team-args">AI CapEx全球爆发$5000亿+ 美联储降息预期利好成长股估值</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">5. 财务分析师</div><div class="team-args">FCF $902亿，FCF/净利润75%，净现金$674亿，盈利质量极高</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">6. 技术架构师</div><div class="team-args">NVLink+CUDA生态18-24月代差，Rubin平台 specs 领先AMD 2代</div></div></div>
 <div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">7. 股东回报分析师</div><div class="team-args">FY26回购$411亿，剩余授权$585亿，持续大规模回馈股东</div></div></div>
-<div class="team-card hold"><div class="team-vote hold">持有</div><div class="team-info"><div class="team-role">8. 风险控制官</div><div class="team-args">中国出口管制+竞争加剧+高Beta(2.33)，需设止损$165</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">9. 新兴市场专家</div><div class="team-args">中东/东南亚AI基础设施建设，NVDA份额绝对主导</div></div></div>
-<div class="team-card hold"><div class="team-vote hold">持有</div><div class="team-info"><div class="team-role">10. 逆向投资者</div><div class="team-args">PE 40x历史高位，预期已高，耐心等待$165以下介入</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">11. ESG分析师</div><div class="team-args">AI算力能效持续提升，Blackwell每瓦性能提升4倍，绿色AI</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">12. 合规顾问</div><div class="team-args">出口管制虽有影响，但全球需求足够对冲，政策风险可控</div></div></div>
-<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">13. 用户体验分析师</div><div class="team-args">Claude/GPT/Sora等AI应用爆发，推理算力需求呈指数增长</div></div></div>
+<div class="team-card hold"><div class="team-vote hold">持有</div><div class="team-info"><div class="team-role">8. 风险控制官</div><div class="team-args">Beta 2.33高波动，中国出口管制+竞争加剧，建议设止损$165</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">9. 新兴市场专家</div><div class="team-args">中东/东南亚AI基础设施建设，NVDA绝对主导，华为昇腾无法出口</div></div></div>
+<div class="team-card hold"><div class="team-vote hold">持有</div><div class="team-info"><div class="team-role">10. 逆向投资者</div><div class="team-args">PE 40x历史高位(前10%)，当前价已是DCF中性$202，需等待更好的买入时机</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">11. ESG分析师</div><div class="team-args">Blackwell每瓦性能提升4倍，AI能效持续改善，绿色算力贡献</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">12. 合规顾问</div><div class="team-args">出口管制虽有影响，但中东/东南亚需求强劲对冲，政策风险可控</div></div></div>
+<div class="team-card buy"><div class="team-vote buy">强买</div><div class="team-info"><div class="team-role">13. 用户体验分析师</div><div class="team-args">Claude/GPT/Sora等推理需求爆发，每token成本每年降50%，算力需求长期增长</div></div></div>
 <div class="team-card hold"><div class="team-vote hold">持有</div><div class="team-info"><div class="team-role">14. 供应链专家</div><div class="team-args">台积电CoWoS封装产能仍是瓶颈，供应链单一风险需关注</div></div></div>
-
 </div>
 </section>
 
 <!-- Buffett评分 -->
 <section>
-<h2>十、巴菲特五维度量化评分</h2>
+<h2>十三、巴菲特五维度量化评分</h2>
 <div class="chart-wrap"><canvas id="c-buffett" height="320"></canvas></div>
 <div class="buffett-scores">
-
-<div class="b-score"><div class="b-name">1. 护城河</div><div class="b-grade a">A+</div><div class="b-note">CUDA生态+NVLink网络+先发优势，18-24月代差无可替代</div></div>
-<div class="b-score"><div class="b-name">2. 定价权</div><div class="b-grade a">A+</div><div class="b-note">毛利率75%且仍在提升，AI算力稀缺赋予极强定价权</div></div>
-<div class="b-score"><div class="b-name">3. ROIC</div><div class="b-grade a">A+</div><div class="b-note">FY26 ROIC超100%+，资本回报率惊人，FCF/净利润80%</div></div>
-<div class="b-score"><div class="b-name">4. 债务安全</div><div class="b-grade a">A</div><div class="b-note">净现金$674亿 vs 有息负债$148亿，净现金/市值17%，极安全</div></div>
-<div class="b-score"><div class="b-name">5. 管理层</div><div class="b-grade a">A+</div><div class="b-note">黄仁勋战略清晰执行力强，承诺持续兑现，员工持股绑定利益</div></div>
-<div class="b-score" style="background:#0f2a4a;color:#fff"><div class="b-name" style="color:#93c5fd">综合评分</div><div class="b-grade a" style="color:#60a5fa">A+</div><div class="b-note" style="color:#93c5fd">巴菲特评级：极其优异的生意，接近满分</div></div>
-
+<div class="b-score"><div class="b-name">1. 护城河</div><div class="b-grade a">A+</div><div class="b-note">CUDA生态+NVLink网络效应，18-24月技术代差无可替代</div></div>
+<div class="b-score"><div class="b-name">2. 定价权</div><div class="b-grade a">A+</div><div class="b-note">FY26毛利率75%，AI算力稀缺赋予极强定价权，且仍在提升</div></div>
+<div class="b-score"><div class="b-name">3. ROIC</div><div class="b-grade a">A+</div><div class="b-note">FY26 ROIC超100%，FCF $902亿，资本回报率惊人</div></div>
+<div class="b-score"><div class="b-name">4. 债务安全</div><div class="b-grade a">A</div><div class="b-note">净现金$674亿 vs 有息负债$148亿，净现金/市值14%，极安全</div></div>
+<div class="b-score"><div class="b-name">5. 管理层</div><div class="b-grade a">A+</div><div class="b-note">黄仁勋战略清晰执行力强，每代产品路线图100%兑现</div></div>
+<div class="b-score" style="background:#0f2a4a;color:#fff"><div class="b-name" style="color:#93c5fd">综合评分</div><div class="b-grade a" style="color:#60a5fa">A+</div><div class="b-note" style="color:#93c5fd">Buffett评级：极其优异的生意，近乎满分</div></div>
 </div>
 </section>
 
-<!-- CIO裁决 -->
-<section class="cio-section">
-<h2>十一、CIO最终裁决</h2>
-<div class="cio-card">
-<div class="cio-score">8.5<span>/10</span></div>
-<div class="cio-label">综合评分</div>
-</div>
-<div class="cio-conclusion">
-<div class="conclusion-item">
-<span class="tag buy">增持</span>
-<div>建议仓位：投资组合的 <strong>30-40%</strong>（科技成长仓核心持仓）</div>
-</div>
-<div class="conclusion-item">
-<span class="tag orange">目标价区间</span>
-<div><strong>$240 – $270</strong>（华尔街共识$264，中性情景$202，乐观情景$265）</div>
-</div>
-<div class="conclusion-item">
-<span class="tag green">上涨空间</span>
-<div><strong>+21% ~ +36%</strong>（12个月视角）</div>
-</div>
-<div class="conclusion-item">
-<span class="tag red">卖出触发</span>
-<div>PE超过55x（历史前10%分位）+ 分析师一致评级降至"持有"以下</div>
-</div>
-</div>
-<div class="callout buy">
-<strong>核心逻辑：</strong>英伟达是AI时代最确定的基础设施赢家——Blackwell已量产、Rubin路线清晰、Q1营收指引780亿美元超预期40亿美元、净现金充裕、FCF每年翻倍增长。修正PE（去债版）36.7x，对应60%以上净利润增速并不贵。当前$198.87是11连涨后的技术性休整，中期底部已形成。
-</div>
-<div class="callout warning">
-<strong>主要风险：</strong>①中国出口管制持续压制数据中心收入约15%②AMD/Google TPU竞争加剧 ③AI基础设施CapEx峰值后需求悬崖 ④估值对利率敏感（Beta 2.33）
-</div>
-<div class="callout info">
-<strong>下季度追踪：</strong>①2026-05-27 FY27 Q1财报 ②Rubin平台量产进度 ③Blackwell GB300出货量 ④中国区数据中心政策变化
-</div>
-</section>
-
-<!-- 管理层 -->
+<!-- 管理层原文节选 -->
 <section>
-<h2>十二、管理层分析</h2>
-<div class="quote-box">
-<p>"算力需求正呈指数级增长，<strong>代理式AI的拐点已经到来</strong>。采用NVLink技术的Grace Blackwell在当前推理领域持续领先，单位token成本实现了一个数量级的下降，而Vera Rubin将进一步巩固这一领先优势。"</p>
-<div class="quote-author">— 黄仁勋 (Jensen Huang), CEO, NVIDIA FY26 Q4财报, 2026-02-25</div>
+<h2>十四、管理层分析（历年原文对比）</h2>
+<div class="sub-section">
+  <h3>FY2025 10-K 原文节选（黄仁勋致股东信，filed 2025-02-25）</h3>
+  <div class="quote-box">
+    <p>"The era of computing is being reinvented. NVIDIA GPUs, running CUDA, are the engines of AI factories — a new kind of data center that produces artificial intelligence tokens. We are at the tipping point of a new computing era."</p>
+    <div class="quote-author">— Jensen Huang, CEO, NVIDIA FY2025 Annual Report (filed 2025-02-25) | SEC 10-K</div>
+  </div>
+</div>
+<div class="sub-section">
+  <h3>FY2026 Q4 财报原文节选（2026-02-25发布）</h3>
+  <div class="quote-box">
+    <p>"<strong>Agentic AI has arrived.</strong> The tipping point for agentic AI is here. Grace Blackwell systems continue to lead inference with NVLink, delivering <strong>one order of magnitude reduction in cost per token</strong>. Vera Rubin will extend this lead further. Demand for Blackwell is staggering, and we are shipping at incredible scale into 2027."</p>
+    <div class="quote-author">— Jensen Huang, CEO, NVIDIA FY2026 Q4 Earnings Call, 2026-02-25</div>
+  </div>
+</div>
+<div class="sub-section">
+  <h3>跨年承诺兑现追踪</h3>
+  <div class="data-table">
+  <table>
+  <tr><th>承诺</th><th>时间</th><th>兑现情况</th><th>评估</th></tr>
+  <tr><td>Blackwell将如期量产</td><td>FY2025 Q2 (2024-08)</td><td>FY2026 Q1量产，Q4已出货</td><td class="green">✅ 完全兑现</td></tr>
+  <tr><td>数据中心收入破$1000亿</td><td>FY2025 10-K</td><td>FY2026实际$1937亿，超预期87%</td><td class="green">✅ 大幅超预期</td></tr>
+  <tr><td>Rubin平台2026推出</td><td>FY2025 Q4 (2025-02)</td><td>2026年 roadmap 推进中</td><td class="orange">⏳ 进行中</td></tr>
+  <tr><td>中国出口管制影响可控</td><td>FY2023-2025年年报</td><td>中国区约15%收入影响，全球需求对冲</td><td class="green">✅ 基本兑现</td></tr>
+  </table>
+  </div>
 </div>
 <div class="data-table">
 <table>
 <tr><th>评估维度</th><th>评分</th><th>依据</th></tr>
-<tr><td>战略清晰度</td><td>A+</td><td>从GPU→AI基础设施平台，每代产品路线图清晰兑现</td></tr>
-<tr><td>执行力</td><td>A+</td><td>Blackwell如期量产，Q1指引持续超预期</td></tr>
-<tr><td>资本配置</td><td>A</td><td>FY26回报411亿美元，回购授权585亿，现金牛特征明显</td></tr>
-<tr><td>透明度</td><td>A</td><td>主动披露各业务分部，提供详细指引区间</td></tr>
-<tr><td>技术领导力</td><td>A+</td><td>NVLink/CUDA生态护城河无可撼动</td></tr>
+<tr><td>战略清晰度</td><td class="green">A+</td><td>从GPU→AI基础设施平台，每代产品路线图清晰兑现</td></tr>
+<tr><td>执行力</td><td class="green">A+</td><td>Blackwell如期量产，FY2026营收超预期，Q1指引持续超预期</td></tr>
+<tr><td>资本配置</td><td class="green">A</td><td>FY2026回报411亿美元，回购授权585亿，现金牛特征明显</td></tr>
+<tr><td>透明度</td><td class="green">A</td><td>主动披露各业务分部，提供详细季度指引区间</td></tr>
+<tr><td>技术领导力</td><td class="green">A+</td><td>NVLink/CUDA生态护城河无可撼动</td></tr>
 </table>
 </div>
 </section>
 
 <!-- 波特五力 -->
 <section>
-<h2>十三、波特五力与竞争格局</h2>
+<h2>十五、波特五力与竞争格局</h2>
 <div class="five-forces">
-<div class="force-card">
-<div class="force-title">行业内竞争 ★★★★☆</div>
-<div>AMD Instinct MI350X快速追赶，Intel Gaudi 3开始出货。但CUDA生态+NVLink网络效应形成18-24个月技术代差。价格战短期不会动摇英伟达定价权。</div>
+<div class="force-card"><div class="force-title">行业内竞争 ★★★★☆（高但可控）</div>AMD Instinct MI350X快速追赶，Intel Gaudi 3出货。但CUDA生态+NVLink网络效应形成18-24月技术代差，价格战短期不会动摇英伟达定价权。</div>
+<div class="force-card"><div class="force-title">新进入者威胁 ★★☆☆☆（壁垒极高）</div>云厂商自研芯片（Google TPU/微软Maia/Amazon Trainium）部分替代推理需求，但训练端NVDA仍占80%+份额。定制ASIC无法替代通用计算。</div>
+<div class="force-card"><div class="force-title">替代品威胁 ★★★☆☆（通用性优势）</div>ASIC（博通/Marvell）在特定推理场景成本更低，但通用性差。短期内GPU仍是最灵活的计算平台，替代威胁有限。</div>
+<div class="force-card"><div class="force-title">供应商议价能力 ★★☆☆☆（相对平衡）</div>台积电是唯一先进制程供应商（CoWoS封装），存在集中风险。但台积电同样依赖NVDA大单，议价能力相对平衡。</div>
+<div class="force-card"><div class="force-title">客户议价能力 ★★★☆☆（稀缺性对冲）</div>微软/谷歌/亚马逊/Meta四大客户合计占数据中心60%+。大客户有定制化要求，但AI算力稀缺性赋予英伟达更强话语权。</div>
 </div>
-<div class="force-card">
-<div class="force-title">新进入者威胁 ★★☆☆☆</div>
-<div>云厂商自研芯片（Google TPU/微软Maia/Amazon Trainium）部分替代推理需求，但训练端NVDA仍占80%+份额。进入壁垒极高。</div>
-</div>
-<div class="force-card">
-<div class="force-title">替代品威胁 ★★★☆☆</div>
-<div>ASIC（博通/Marvell）在特定推理场景成本更低，但通用性差。短期内GPU仍是最灵活的计算平台。</div>
-</div>
-<div class="force-card">
-<div class="force-title">供应商议价能力 ★★☆☆☆</div>
-<div>台积电是唯一先进制程供应商，存在集中风险。但台积电同样依赖英伟达订单，议价能力相对平衡。</div>
-</div>
-<div class="force-card">
-<div class="force-title">客户议价能力 ★★★☆☆</div>
-<div>微软/谷歌/亚马逊/Meta四大客户合计占数据中心收入60%+。大客户有定制化要求和议价压力，但AI算力稀缺性赋予英伟达更强话语权。</div>
-</div>
+<div class="sub-section">
+  <h3>竞争格局六维度</h3>
+  <div class="data-table">
+  <table>
+  <tr><th>维度</th><th>分析</th><th>英伟达</th><th>AMD</th><th>Google TPU</th></tr>
+  <tr><td>市场份额（训练）</td><td>NVDA约80-85%</td><td class="green">★★★★★</td><td class="orange">★★☆☆☆</td><td class="orange">★★☆☆☆</td></tr>
+  <tr><td>CUDA生态</td><td>护城河核心</td><td class="green">★★★★★</td><td class="red">★☆☆☆☆</td><td class="orange">★★☆☆☆</td></tr>
+  <tr><td>成本性能比</td><td>Blackwell领先</td><td class="green">★★★★☆</td><td class="orange">★★★☆☆</td><td class="green">★★★★☆</td></tr>
+  <tr><td>产能弹性</td><td>台积电绑定</td><td class="orange">★★★☆☆</td><td class="orange">★★★☆☆</td><td class="green">★★★★☆</td></tr>
+  <tr><td>网络互联</td><td>NVLink差异化</td><td class="green">★★★★★</td><td class="orange">★★☆☆☆</td><td class="orange">★★★☆☆</td></tr>
+  <tr><td>软件栈</td><td>cuDNN/CUDA</td><td class="green">★★★★★</td><td class="red">★☆☆☆☆</td><td class="orange">★★★☆☆</td></tr>
+  </table>
+  </div>
 </div>
 </section>
 
 <!-- 宏观 -->
 <section>
-<h2>十四、宏观环境</h2>
+<h2>十六、宏观环境（达利欧周期框架）</h2>
 <div class="macro-grid">
-<div class="macro-item">
-<div class="macro-title">美联储利率</div>
-<div class="macro-value">4.25-4.50%</div>
-<div>2026年降息预期1-2次，利率下行对成长股估值修复有利</div>
-</div>
-<div class="macro-item">
-<div class="macro-title">美国GDP增速</div>
-<div class="macro-value">+2.3%</div>
-<div>AI驱动的科技资本开支持续，美国经济软着陆预期增强</div>
-</div>
-<div class="macro-item">
-<div class="macro-title">AI投资周期</div>
-<div class="macro-value">S曲线加速期</div>
-<div>全球AI数据中心CapEx预计2026年达$5000亿，Blackwell/Rubin订单已排至2028年</div>
-</div>
-<div class="macro-item">
-<div class="macro-title">地缘风险</div>
-<div class="macro-value">中美科技博弈</div>
-<div>美国芯片出口管制影响中国区约15%数据中心收入，但全球需求强劲对冲</div>
-</div>
+<div class="macro-item"><div class="macro-title">美联储利率</div><div class="macro-value">4.25-4.50%</div><div>2026年降息预期1-2次，利率下行对成长股估值修复有利</div></div>
+<div class="macro-item"><div class="macro-title">美国GDP增速</div><div class="macro-value">+2.3%</div><div>AI驱动科技资本开支持续，美国经济软着陆预期增强</div></div>
+<div class="macro-item"><div class="macro-title">AI投资周期</div><div class="macro-value">S曲线加速期</div><div>全球AI数据中心CapEx 2026年预计$5000亿+，Blackwell订单排至2028年</div></div>
+<div class="macro-item"><div class="macro-title">达利欧宏观周期</div><div class="macro-value">第五阶段：印钞</div><div>央行宽松流动性环境，充裕资本追逐优质成长股</div></div>
+<div class="macro-item"><div class="macro-title">地缘风险</div><div class="macro-value orange">中等</div><div>美国芯片出口管制影响中国约15%数据中心收入，全球需求强劲对冲</div></div>
+<div class="macro-item"><div class="macro-title">中国AI政策</div><div class="macro-value orange">受限</div><div>出口管制导致H20等芯片无法出口，国产替代（昇腾）性能差距明显</div></div>
 </div>
 </section>
 
+<!-- 五维度分析 -->
+<section>
+<h2>十七、五维度综合分析</h2>
+<div class="data-table">
+<table>
+<tr><th>维度</th><th>核心结论</th><th>数据支撑</th><th>评分</th></tr>
+<tr><td><strong>经营维度</strong></td><td>AI基础设施超级周期，数据中心连续6季度环比加速</td><td>FY2026 $215.9B (+65.5%)，Q4单季$681亿</td><td class="green">A+</td></tr>
+<tr><td><strong>财务维度</strong></td><td>FCF $902亿，净现金$674亿，盈利质量极高，修正PE 39.8x</td><td>FCF/净利润=75%，净现金/有息负债=4.55x</td><td class="green">A+</td></tr>
+<tr><td><strong>行业维度</strong></td><td>波特五力整体有利，CUDA生态18-24月代差，竞争者短期无法超越</td><td>训练市场份额80%+，NVLink+CUDA护城河</td><td class="green">A+</td></tr>
+<tr><td><strong>宏观维度</strong></td><td>达利欧第五周期（印钞），AI CapEx爆发，利好成长股估值</td><td>全球$5000亿+ AI投资，美联储降息预期</td><td class="green">A</td></tr>
+<tr><td><strong>尾部风险</strong></td><td>出口管制+高Beta(2.33)+PE 40x历史高位，风险需重视</td><td>中国15%收入敞口，估值敏感度高</td><td class="orange">B+</td></tr>
+</table>
+</div>
+</section>
+
+<!-- 监控体系与卖出触发 -->
+<section>
+<h2>十八、监控体系与卖出触发信号</h2>
+<div class="callout warning">
+  <strong>建立监控体系的目的：</strong>价值投资不是"买了就不管"，而是持续追踪核心假设是否被证伪。一旦触发卖出信号，必须执行，不恋战。
+</div>
+<div class="data-table">
+<table>
+<tr><th>核心指标</th><th>当前值</th><th>监控阈值</th><th>触发信号</th><th>应对</th></tr>
+<tr><td>PE估值</td><td>40.6x</td><td>&gt;55x（前10%分位）</td><td>分析师评级降至"持有"以下</td><td class="red">减持50%</td></tr>
+<tr><td>数据中心增速</td><td>+68% YoY</td><td>&lt;20% YoY，连续2季</td><td>大型云厂商CapEx削减公告</td><td class="orange">减持30%</td></tr>
+<tr><td>毛利率</td><td>75.0%</td><td>&lt;68%，连续2季</td><td>竞争加剧导致定价压力</td><td class="orange">减持30%</td></tr>
+<tr><td>FCF/净利润</td><td>75%</td><td>&lt;60%，连续2季</td><td>CapEx大幅扩张侵蚀FCF</td><td class="orange">观察</td></tr>
+<tr><td>竞争格局</td><td>CUDA护城河稳固</td><td>AMD市占率突破25%</td><td>大规模切换CUDA到ROCm</td><td class="red">减持50%</td></tr>
+<tr><td>地缘政策</td><td>出口管制存在</td><td>扩大至全球主要市场</td><td>欧盟/日本实施类似管制</td><td class="red">清仓</td></tr>
+<tr><td>持仓止损</td><td>—</td><td>$165（-17%）</td><td>任何情况触发</td><td class="red">止损出局</td></tr>
+</table>
+</div>
+</section>
+
+<!-- CIO裁决 -->
+<section class="cio-section">
+<h2>十九、CIO最终裁决</h2>
+<div class="cio-card">
+<div class="cio-score">8.5<span>/10</span></div>
+<div class="cio-label">综合评分</div>
+</div>
+<div class="cio-conclusion">
+<div class="conclusion-item"><span class="tag buy">增持</span><div>建议仓位：投资组合<strong>30-40%</strong>（科技成长仓核心持仓）</div></div>
+<div class="conclusion-item"><span class="tag orange">目标价区间</span><div><strong>$240 – $270</strong>（华尔街共识$264，乐观情景$265，悲观$145）</div></div>
+<div class="conclusion-item"><span class="tag green">上涨空间</span><div><strong>+21% ~ +36%</strong>（12个月视角）</div></div>
+<div class="conclusion-item"><span class="tag red">卖出触发</span><div>PE&gt;55x + 评级降至持有以下，或持仓跌破$165止损</div></div>
+</div>
+<div class="callout buy">
+<strong>核心逻辑：</strong>英伟达是AI时代最确定的基础设施赢家——Blackwell已量产、Rubin路线清晰、FY27Q1指引$780亿超预期40亿、净现金$674亿、FCF每年翻倍增长。修正PE（去债版）39.8x，对应FY27 $160B+净利润增速并不贵。当前$198.87是技术性休整，中期底部已形成。
+</div>
+<div class="callout warning">
+<strong>主要风险：</strong>①中国出口管制持续压制约15%数据中心收入 ②AMD MI350X+Google TPU v5竞争加剧 ③AI基础设施CapEx峰值后需求悬崖 ④估值对利率敏感（Beta 2.33）
+</div>
+<div class="callout info">
+<strong>下季度追踪：</strong>①2026-05-27 FY27 Q1财报 ②Rubin平台量产进度 ③Blackwell GB300出货量 ④中国区政策 ⑤主要云厂商CapEx计划
+</div>
+</section>
 
 <div class="footer">
-<p>Dumont IR Framework | 英伟达 NVDA 投资分析 | 2026-04-16</p>
+<p>Dumont IR Framework v2 | 英伟达 NVDA 投资分析 | 2026-04-16</p>
 <p>免责声明：本报告仅供投资参考，不构成投资建议。投资者需自行判断并承担投资风险。</p>
-<p>数据来源：NVIDIA官方财报 · StockAnalysis.com · 摩根士丹利/巴克莱/高盛等机构研报</p>
+<p>数据来源：NVIDIA SEC 10-K FY2025 (filed 2025-02-25) · NVIDIA FY2026 Q4财报 (2026-02-25) · StockAnalysis.com (2026-04-15)</p>
 </div>
-
 </div>
 <script>
 
-var _cc=function(id){var c=document.getElementById(id);if(!c)return null;var ctx=c.getContext('2d');var rect=c.parentElement.getBoundingClientRect();if(c.width!==Math.floor(rect.width)){c.width=Math.floor(rect.width);c.style.width='100%'}var W=c.width,H=c.height;ctx.font='12px -apple-system,BlinkMacSystemFont,sans-serif';return{ctx,c,W,H,px:0,py:0,lx:0,ly:0}};
-var _txt=function(c,t,x,y,col,sz,al){c.ctx.font=(sz||12)+'px -apple-system,sans-serif';c.ctx.fillStyle=col||'#333';c.ctx.textAlign=al||'left';c.ctx.textBaseline='middle';c.ctx.fillText(t,x,y)};
+var _cc=function(id){var c=document.getElementById(id);if(!c)return null;var ctx=c.getContext('2d');var rect=c.parentElement.getBoundingClientRect();if(c.width!==Math.floor(rect.width)){c.width=Math.floor(rect.width)}var W=c.width,H=c.height;ctx.font='12px sans-serif';return{ctx,c,W,H}};
+var _txt=function(c,t,x,y,col,sz,al){c.ctx.font=(sz||12)+'px sans-serif';c.ctx.fillStyle=col||'#333';c.ctx.textAlign=al||'left';c.ctx.textBaseline='middle';c.ctx.fillText(t,x,y)};
 var _line=function(c,x1,y1,x2,y2,col,wd){var d=c.ctx;d.strokeStyle=col||'#888';d.lineWidth=wd||1;d.beginPath();d.moveTo(x1,y1);d.lineTo(x2,y2);d.stroke()};
 var _rect=function(c,x,y,w,h,col,alpha){var d=c.ctx;if(alpha!==undefined){d.globalAlpha=alpha}d.fillStyle=col||'#888';d.fillRect(x,y,w,h);if(alpha!==undefined)d.globalAlpha=1};
 var _arc=function(c,x,y,r,col){var d=c.ctx;d.beginPath();d.arc(x,y,r,0,Math.PI*2);d.fillStyle=col||'#888';d.fill()};
 var _poly=function(c,pts,col,sw){var d=c.ctx;d.beginPath();pts.forEach(function(p,i){d[i===0?'moveTo':'lineTo'](p[0],p[1])});d.closePath();if(sw){d.strokeStyle=col||'#888';d.lineWidth=sw;d.stroke()}else{d.fillStyle=col||'#888';d.fill()}};
-var _cc=function(id){var c=document.getElementById(id);if(!c)return null;var ctx=c.getContext('2d');var rect=c.parentElement.getBoundingClientRect();if(c.width!==Math.floor(rect.width)){c.width=Math.floor(rect.width);c.style.width='100%'}var W=c.width,H=c.height;ctx.font='12px -apple-system,BlinkMacSystemFont,sans-serif';return{ctx,c,W,H}};
-var _txt=function(c,t,x,y,col,sz,al){c.ctx.font=(sz||12)+'px -apple-system,sans-serif';c.ctx.fillStyle=col||'#333';c.ctx.textAlign=al||'left';c.ctx.textBaseline='middle';c.ctx.fillText(t,x,y)};
-var _line=function(c,x1,y1,x2,y2,col,wd){var d=c.ctx;d.strokeStyle=col||'#888';d.lineWidth=wd||1;d.beginPath();d.moveTo(x1,y1);d.lineTo(x2,y2);d.stroke()};
-var _rect=function(c,x,y,w,h,col,alpha){var d=c.ctx;if(alpha!==undefined){d.globalAlpha=alpha}d.fillStyle=col||'#888';d.fillRect(x,y,w,h);if(alpha!==undefined)d.globalAlpha=1};
-var _arc=function(c,x,y,r,col){var d=c.ctx;d.beginPath();d.arc(x,y,r,0,Math.PI*2);d.fillStyle=col||'#888';d.fill()};
-var _poly=function(c,pts,col,sw){var d=c.ctx;d.beginPath();pts.forEach(function(p,i){d[i===0?'moveTo':'lineTo'](p[0],p[1])});d.closePath();if(sw){d.strokeStyle=col||'#888';d.lineWidth=sw;d.stroke()}else{d.fillStyle=col||'#888';d.fill()}};
-var _TOOLTIP=function(c,x,y,lines,color){color=color||'#1e3a5f';var W=0;lines.forEach(function(l){W=Math.max(W,l.length)});var w=W*6.5+16,h=lines.length*18+10;_rect(c,x-2,y-2,w,h,color,.92);_txt(c,lines[0],x+8,y+10,'#fff',12);for(var i=1;i<lines.length;i++)_txt(c,lines[i],x+8,y+10+i*18,'#93c5fd',11)};
-var _fmt=function(n){if(n>=1e12)return'$'+(n/1e12).toFixed(1)+'T';if(n>=1e9)return'$'+(n/1e9).toFixed(1)+'B';if(n>=1e6)return'$'+(n/1e6).toFixed(1)+'M';return'$'+n.toFixed(0)};
-var _fmtY=function(n){if(n>=1e12)return(n/1e12).toFixed(1)+'T';if(n>=1e9)return(n/1e9).toFixed(0)+'B';if(n>=1e6)return(n/1e6).toFixed(0)+'M';return String(n)};
+var _fmk=function(c,minV,maxV,ys){var M=40,T=c.H-30,B=M+10;for(var i=0;i<=ys;i++){var y=T-(T-B)*i/ys;_line(c,M,y,c.W-10,y,'#f1f5f9',1);_txt(c,Math.round(minV+(maxV-minV)*i/ys).toLocaleString(),M-5,y,'#94a3b8',10,'right')}};
+var _fmtY=function(n){if(n>=1e12)return'$'+(n/1e12).toFixed(1)+'T';if(n>=1e9)return'$'+(n/1e9).toFixed(0)+'B';if(n>=1e6)return'$'+(n/1e6).toFixed(0)+'M';return'$'+n.toFixed(0)};
 var _fmtP=function(n){return(n>=0?'+':'')+n.toFixed(1)+'%'};
-var _fmk=function(c,labels,minV,maxV,ys){var M=40,R=c.W-M-10,n=labels.length,w=R/n;for(var i=0;i<=ys;i++){var y=c.H-30-(maxV-minV>0?(ys-i)/ys*(c.H-50):0);if(ys>0)y=c.H-30-(c.H-50)*(ys-i)/ys;_line(c,M,y,c.W-10,y,'#e2e8f0',1);_txt(c,minV+(maxV-minV)*i/ys,M-5,y,'#94a3b8',10,'right')};for(var i=0;i<n;i++){var x=M+i*w;_txt(c,labels[i],x+w/2,c.H-12,'#64748b',10,'center')}};
-var _gridY=function(c,minV,maxV,ys){for(var i=0;i<=ys;i++){var y=c.H-30-(c.H-50)*i/ys;_line(c,40,y,c.W-10,y,'#f1f5f9',1)}};
-var _hover=function(c,handler){c.c.addEventListener('mousemove',function(e){var r=c.c.getBoundingClientRect();var mx=(e.clientX-r.left)*(c.c.width/r.width);var my=(e.clientY-r.top)*(c.c.height/r.height);var lbl=handler(mx,my);if(lbl){c.c.style.cursor='crosshair';c.hover=lbl}else{c.c.style.cursor='default'}})}
+var _dot=function(c,x,y,r,col){var d=c.ctx;d.beginPath();d.arc(x,y,r||3,0,Math.PI*2);d.fillStyle=col||'#1e3a5f';d.fill()};
 
-function drawLine(c,data,col,ys,minV,maxV){var M=40,R=c.W-M-10,n=data.length;if(!n)return;minV=minV||Math.min.apply(null,data)*.9;maxV=maxV||Math.max.apply(null,data)*1.05;_fmk(c,[],minV,maxV,ys);_gridY(c,minV,maxV,ys);var pts=[];for(var i=0;i<n;i++)pts.push([M+i*(R/n),(c.H-30)-(data[i]-minV)/(maxV-minV)*(c.H-50)]);_poly(c,pts,col,2);for(var i=0;i<n;i++){var x=M+i*(R/n),y=(c.H-30)-(data[i]-minV)/(maxV-minV)*(c.H-50);_arc(c,x,y,3,col)}c._lastData={pts:pts,data:data,minV:minV,maxV:maxV,M:M,R:R}}
-
-function drawBar(c,labels,values,cols,ys,minV,maxV,showValues){minV=minV||0;maxV=maxV||Math.max.apply(null,values)*1.1;_fmk(c,labels,minV,maxV,ys);_gridY(c,minV,maxV,ys);var M=40,n=labels.length,gap=4,w=(c.W-M-20)/n-gap;values.forEach(function(v,i){var x=M+gap/2+i*(w+gap),h=(v-minV)/(maxV-minV)*(c.H-50),y=c.H-30-h;_rect(c,x,y,w,h,cols[i]||cols[0]);if(showValues)_txt(c,_fmtY(v),x+w/2,y-8,cols[i]||cols[0],10,'center')});var step=Math.ceil(n/8);for(var i=0;i<n;i+=step){var x=M+gap/2+i*(w+gap);_txt(c,labels[i],x+w/2,c.H-12,'#64748b',10,'center')}}
-
-function drawPie(c,data,labels,cols){var total=data.reduce(function(a,b){return a+b},0);var cx=c.W/2,cy=c.H/2,r=Math.min(cx,cy)*.7;var start=0;data.forEach(function(v,i){var angle=(v/total)*Math.PI*2,end=start+angle;c.ctx.beginPath();c.ctx.moveTo(cx,cy);c.ctx.arc(cx,cy,r,start,end);c.ctx.fillStyle=cols[i]||'#888';c.ctx.fill();start=end});var legend=c.W-r*2-20;for(var i=0;i<data.length;i++){var pct=(data[i]/total*100).toFixed(1)+'%';_rect(c,10,i*22+10,14,14,cols[i]||'#888');_txt(c,labels[i]+' '+pct,30,i*22+17,'#333',12)}};
-
-function drawRadar(c,axes,values,cols,label){var cx=c.W/2,cy=c.H/2,r=Math.min(cx,cy)*.7;var n=axes.length;for(var layer=1;layer<=5;layer++){var lr=r*layer/5;var pts=[];for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n;pts.push([cx+Math.cos(angle)*lr,cy+Math.sin(angle)*lr])}_poly(c,pts,'#e2e8f0',1)}for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n;_line(c,cx,cy,cx+Math.cos(angle)*r,cy+Math.sin(angle)*r,'#e2e8f0',1);_txt(c,axes[i],cx+Math.cos(angle)*(r+18),cy+Math.sin(angle)*(r+18),'#64748b',10,'center')}var vpts=[];for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n,v=values[i];vpts.push([cx+Math.cos(angle)*r*v,cx+Math.sin(angle)*r*v])}_poly(c,vpts,cols||'rgba(30,58,95,0.4)',2);vpts.forEach(function(p){_arc(c,p[0],p[1],4,cols[1]||'#1e3a5f')})}
-
-function drawGauge(c,value,maxV,col){var cx=c.W/2,cy=c.H*.7,r=Math.min(c.W,cy)*.6;c.ctx.lineWidth=16;for(var i=0;i<10;i++){c.ctx.beginPath();c.ctx.arc(cx,cy,r,Math.PI*.75+i*.15,Math.PI*.75+(i+1)*.15);c.ctx.strokeStyle=i/10<value/maxV?col||'#38a169':'#e2e8f0';c.ctx.stroke()}_txt(c,value,cx,cy-10,'#1a1a2e',28,'center');_txt(c,label||'',cx,cy+16,'#64748b',12,'center')}
-
-function drawScatter(c,xData,yData,cols,labels){var minX=Math.min.apply(null,xData)*.9,maxX=Math.max.apply(null,xData)*1.1;var minY=Math.min.apply(null,yData)*.9,maxY=Math.max.apply(null,yData)*1.1;_txt(c,'X',c.W-10,c.H-10,'#64748b',10,'right');_txt(c,'Y',15,c.H-10,'#64748b',10);for(var i=0;i<xData.length;i++){var x=40+(xData[i]-minX)/(maxX-minX)*(c.W-60);var y=(c.H-30)-(yData[i]-minY)/(maxY-minY)*(c.H-50);_arc(c,x,y,6,cols[i]||'#1e3a5f');if(labels&&labels[i])_txt(c,labels[i],x+8,y,cols[i]||'#333',10,'left')}}
-
-function drawHeatmap(c,rows,cols,data,cols2,valFmt){var cw=c.W/cols.length,ch=(c.H-20)/rows.length;rows.forEach(function(r,ri){_txt(c,r,3,ri*ch+ch/2,'#333',10);cols.forEach(function(col,ci){var v=data[ri]&&data[ri][ci]!==undefined?data[ri][ci]:0;var alpha=valFmt?Math.abs(v)/100:.7;var col2=(v>=0?(cols2&&cols2[0]||'#38a169'):(cols2&&cols2[1]||'#e53e3e'));c.ctx.globalAlpha=Math.abs(v)/100;_rect(c,ci*cw+60,ri*ch,Math.max(cw-2,0),ch-2,col2);c.ctx.globalAlpha=1;if(valFmt){var t=typeof valFmt==='function'?valFmt(v):String(v);_txt(c,t,60+ci*cw+cw/2,ri*ch+ch/2,'#fff',9,'center')}})})}
-
-function drawStackedBar(c,labels,series,cols,ys,minV,maxV){minV=minV||0;maxV=maxV||Math.max.apply(null,series[0].map(function(v,i){return series.reduce(function(a,s){return a+(s[i]||0)},0)}))*1.1;_fmk(c,labels,minV,maxV,ys);_gridY(c,minV,maxV,ys);var M=40,n=labels.length,gap=4,w=(c.W-M-20)/n;series.forEach(function(s,sidx){s.forEach(function(v,i){var base=series.slice(0,sidx).reduce(function(a,b){return a+(b[i]||0)},0);var x=M+i*(w+gap),h=v/(maxV-minV)*(c.H-50),y=c.H-30-(base+v)/(maxV-minV)*(c.H-50);_rect(c,x,y,w,gap>0?h:0,cols[sidx]);if(gap>0&&v>maxV*.05)_txt(c,_fmtY(v),x+w/2,y+10,cols[sidx],9,'center')})});var step=Math.ceil(n/8);for(var i=0;i<n;i+=step){var x=M+i*(w+gap);_txt(c,labels[i],x+w/2,c.H-12,'#64748b',10,'center')}}
-
-var _TOOLTIP=function(c,x,y,lines,color){color=color||'#1e3a5f';var W=0;lines.forEach(function(l){W=Math.max(W,l.length)});var w=W*6.5+16,h=lines.length*18+10;_rect(c,x-2,y-2,w,h,color,.92);_txt(c,lines[0],x+8,y+10,'#fff',12);for(var i=1;i<lines.length;i++)_txt(c,lines[i],x+8,y+10+i*18,'#93c5fd',11)};
-
-// --- 图表1: 营收历史趋势 ---
-function render_rev(){
-  var c=_cc('c-revenue');if(!c)return;
-  drawBar(c,['FY23','FY24','FY25','FY26'],[27,60.9,130.5,215.9],['#94a3b8','#64748b','#1e3a5f','#1e3a5f'],5,0,250);
-  _txt(c,'单位：亿美元',c.W-10,10,'#94a3b8',10,'right');
+function drawLine(c,data,col,minV,maxV,ys,showDots,labelX){
+  if(!data||!data.length)return;
+  minV=minV||Math.min.apply(null,data)*.9;maxV=maxV||Math.max.apply(null,data)*1.05;
+  var M=40,T=c.H-30,B=M+10,H2=T-B;
+  _fmk(c,minV,maxV,ys||5);
+  var n=data.length,R=c.W-M-20,step=R/n;
+  var pts=[];
+  for(var i=0;i<n;i++){var x=M+10+i*step,y=T-(data[i]-minV)/(maxV-minV)*H2;pts.push([x,y]);if(showDots)_dot(c,x,y,3,col)}
+  _poly(c,pts,col,2);
+  if(labelX&&labelX.length){var step2=Math.ceil(n/labelX.length);for(var i=0;i<n;i+=step2){var x=M+10+i*step;_txt(c,labelX[i]||'',x,T+14,'#64748b',10,'center')}}
+  c._pts=pts;c._minV=minV;c._maxV=maxV;c._M=M;c._T=T;c._H2=H2;c._step=step;
 }
 
-// --- 图表2: 净利润趋势 ---
-function render_netprofit(){
-  var c=_cc('c-netprofit');if(!c)return;
-  drawLine(c,[44,298,729,1201],'#1e3a5f',5,0,1400);
-  _txt(c,'单位：亿美元',c.W-10,10,'#94a3b8',10,'right');
-}
-
-// --- 图表3: 业务分部饼图 ---
-function render_seg_pie(){
-  var c=_cc('c-segment-pie');if(!c)return;
-  drawPie(c,[623,37,13,6],['数据中心','游戏','专业可视化','汽车'],['#1e3a5f','#38a169','#0ea5e9','#f59e0b']);
-}
-
-// --- 图表4: 分部历史趋势 ---
-function render_seg_trend(){
-  var c=_cc('c-segment-trend');if(!c)return;
-  drawLine(c,[48,286,1152,1937],'#1e3a5f',5,0,2200);
-  drawLine(c,[9,11,114,160],'#38a169',5,0,2200);
-  _txt(c,'数据中心','5px','5px','#1e3a5f',10);_txt(c,'游戏','5px','18px','#38a169',10);
-  _txt(c,'单位：亿美元',c.W-10,10,'#94a3b8',10,'right');
-}
-
-// --- 图表5: 季度营收趋势 ---
-function render_quarter_rev(){
-  var c=_cc('c-quarter-rev');if(!c)return;
-  var labels=['Q4'24','Q1'25','Q2'25','Q3'25','Q4'25','Q1'26','Q2'26','Q3'26','Q4'26'];
-  var vals=[22.1,26.0,30.0,35.1,39.3,43.5,50.8,57.0,68.1];
-  drawBar(c,labels,vals,['#1e3a5f'],5,0,80);
-  _txt(c,'FY26 Q4: $681亿 (+73% YoY) | 来源:NVIDIA官方',c.W/2,10,'#e53e3e',11,'center');
-}
-
-// --- 图表6: 毛利率趋势 ---
-function render_margin(){
-  var c=_cc('c-margin');if(!c)return;
-  drawLine(c,[56.8,72.7,75.0,73.4,75.0],'#38a169',5,50,80);
-  _txt(c,'FY26 Q4 GAAP毛利率: 75.0% (历史新高) | Non-GAAP: 75.2%',c.W/2,10,'#38a169',11,'center');
-}
-
-// --- 图表7: EPS趋势 ---
-function render_eps(){
-  var c=_cc('c-eps');if(!c)return;
-  drawLine(c,[0.18,1.19,2.94,4.90],'#0ea5e9',4,0,6);
-  _txt(c,'FY26 GAAP EPS: $4.90 (+67%) | Non-GAAP EPS: $4.77',c.W/2,10,'#0ea5e9',11,'center');
-}
-
-// --- 图表8: 资产负债表 ---
-function render_balance(){
-  var c=_cc('c-balance');if(!c)return;
-  var labels=['FY24','FY25','FY26 Q4'];
-  var csh=[164,295,412];var debt=[97,109,148];
-  var series=[csh,debt];var cols=['#38a169','#e53e3e'];
-  drawStackedBar(c,labels,series,cols,4,0,500);
-  _txt(c,'绿色=净现金($412B) | 红色=有息负债($148B) | 来源:NVIDIA 10-K',c.W/2,10,'#64748b',10,'center');
-}
-
-// --- 图表9: 现金流 ---
-function render_cashflow(){
-  var c=_cc('c-cashflow');if(!c)return;
-  drawBar(c,['FY24','FY25','FY26'],[295,540,960],['#1e3a5f'],5,0,1100);
-  drawLine(c,[284,515,902],'#38a169',5,0,1100);
-  _txt(c,'蓝色=经营现金流 | 绿色=自由现金流 | 来源:NVIDIA 10-K',c.W/2,10,'#64748b',10,'center');
-}
-
-// --- 图表10: PE历史分位 ---
-function render_pe(){
-  var c=_cc('c-pe');if(!c)return;
-  drawBar(c,['FY23','FY24','FY25','当前(FY26)','Forward'],
-    [120,35,44,40.6,23.9],['#94a3b8','#1e3a5f','#1e3a5f','#e53e3e','#38a169'],5,0,140);
-  _txt(c,'当前PE 40.6x处于历史中位，Forward PE 23.9x更具吸引力',c.W/2,10,'#64748b',11,'center');
-}
-
-// --- 图表11: DCF三情景 ---
-function render_dcf(){
-  var c=_cc('c-dcf');if(!c)return;
-  var bars=[145,202,265];var cols=['#e53e3e','#f59e0b','#38a169'];
-  var labels=['悲观 $145','中性 $202','乐观 $265'];
-  bars.forEach(function(v,i){
-    var h=v/300*(c.H-60),y=c.H-30-h,x=c.W/4+i*(c.W/3.5);
-    _rect(c,x,y,c.W/5,h,cols[i]);
-    _txt(c,labels[i],x+c.W/10,y-8,cols[i],11,'center');
-    _txt(c,v===145?'-27%':'当前:'+($198.87),x+c.W/10,y+h/2+5,'#fff',11,'center');
+function drawBar(c,labels,values,cols,minV,maxV,ys,showVals){
+  minV=minV||0;maxV=maxV||Math.max.apply(null,values)*1.1;
+  var M=40,T=c.H-30,B=M+10,H2=T-B;
+  _fmk(c,minV,maxV,ys||5);
+  var n=labels.length,gap=6,w=(c.W-M-20)/n-gap;
+  values.forEach(function(v,i){
+    var x=M+i*(w+gap)+gap/2,h=(v-minV)/(maxV-minV)*H2,y=T-h;
+    _rect(c,x,y,w,h,cols[i]||cols[0]);
+    if(showVals)_txt(c,_fmtY(v),x+w/2,y-6,cols[i]||cols[0],9,'center');
+    _txt(c,labels[i],x+w/2,T+14,'#64748b',10,'center');
   });
-  _txt(c,'$198.87',c.W-10,c.H-10,'#1e3a5f',14,'right');
 }
 
-// --- 图表12: 风险热力图 ---
-function render_risk(){
-  var c=_cc('c-risk');if(!c)return;
+function drawPie(c,data,labels,cols){
+  var total=data.reduce(function(a,b){return a+b},0);
+  var cx=c.W/2,cy=c.H/2,r=Math.min(cx,cy)*.65;
+  var start=0;
+  data.forEach(function(v,i){
+    var angle=(v/total)*Math.PI*2,end=start+angle;
+    c.ctx.beginPath();c.ctx.moveTo(cx,cy);
+    c.ctx.arc(cx,cy,r,start,end);
+    c.ctx.fillStyle=cols[i]||'#888';c.ctx.fill();start=end;
+  });
+  for(var i=0;i<data.length;i++){
+    var pct=(data[i]/total*100).toFixed(1)+'%';
+    _rect(c,10,i*22+10,14,14,cols[i]||'#888');
+    _txt(c,labels[i]+' '+pct,30,i*22+17,'#333',12);
+  }
+}
+
+function drawRadar(c,axes,values,cols){
+  var cx=c.W/2,cy=c.H/2,r=Math.min(cx,cy)*.7,n=axes.length;
+  for(var layer=1;layer<=5;layer++){
+    var lr=r*layer/5,pts=[];
+    for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n;pts.push([cx+Math.cos(angle)*lr,cy+Math.sin(angle)*lr])}
+    _poly(c,pts,'#e2e8f0',1);
+  }
+  for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n;_line(c,cx,cy,cx+Math.cos(angle)*r,cy+Math.sin(angle)*r,'#e2e8f0',1);_txt(c,axes[i],cx+Math.cos(angle)*(r+18),cy+Math.sin(angle)*(r+18),'#64748b',10,'center')}
+  var vpts=[];
+  for(var i=0;i<n;i++){var angle=-Math.PI/2+i*2*Math.PI/n;vpts.push([cx+Math.cos(angle)*r*values[i],cy+Math.sin(angle)*r*values[i]])}
+  _poly(c,vpts,cols[0]||'rgba(30,58,95,0.3)',2);
+  vpts.forEach(function(p){_dot(c,p[0],p[1],4,cols[1]||'#1e3a5f')});
+}
+
+function drawGauge(c,value,maxV,col,label){
+  var cx=c.W/2,cy=c.H*.7,r=Math.min(c.W,cy)*.6;
+  c.ctx.lineWidth=16;
+  for(var i=0;i<10;i++){
+    var s=Math.PI*.75+i*.15;
+    c.ctx.beginPath();c.ctx.arc(cx,cy,r,s,s+.15);
+    c.ctx.strokeStyle=i/10<value/maxV?(col||'#38a169'):'#e2e8f0';c.ctx.stroke();
+  }
+  _txt(c,value,cx,cy-10,'#1a1a2e',28,'center');
+  if(label)_txt(c,label,cx,cy+18,'#64748b',12,'center');
+}
+
+function drawDualBar(c,labels,series,cols,minV,maxV,ys){
+  minV=minV||0;maxV=maxV||Math.max.apply(null,series.flat())*1.1;
+  var M=40,T=c.H-30,B=M+10,H2=T-B;
+  _fmk(c,minV,maxV,ys||5);
+  var n=labels.length,gap=4,w=(c.W-M-20)/n-gap,hw=w/series.length;
+  series.forEach(function(s,sidx){
+    s.forEach(function(v,i){
+      var base=series.slice(0,sidx).reduce(function(a,b){return a+(b[i]||0)},0);
+      var x=M+i*(w+gap)+gap/2+sidx*hw,sy=T-(v-minV)/(maxV-minV)*H2,sh=((v-base)/(maxV-minV))*H2;
+      _rect(c,x,sy-sh,hw,Math.max(sh,.5),cols[sidx]);
+    });
+    _txt(c,labels[i],M+i*(w+gap)+gap/2+w/2,T+14,'#64748b',10,'center');
+  });
+}
+
+// 图表1: 营收历史 (GAAP)
+function r1(){var c=_cc('c-rev');if(!c)return;drawBar(c,['FY23','FY24','FY25','FY26'],
+  [27,60.9,130.5,215.9],['#94a3b8','#64748b','#1e3a5f','#1e3a5f'],0,250,5,true);
+  _txt(c,'单位: 亿美元 | 来源: NVIDIA 10-K + FY26 Q4财报',c.W-10,10,'#94a3b8',10,'right');}
+
+// 图表2: IFRS vs Non-IFRS 净利润
+function r2(){var c=_cc('c-ni');if(!c)return;
+  drawLine(c,[4.4,29.8,72.9,120.1],'#1e3a5f',0,140,5,true,['FY23','FY24','FY25','FY26']);
+  drawLine(c,[13.5,32.3,74.4,124.2],'#38a169',0,140,5,true,['FY23','FY24','FY25','FY26']);
+  _txt(c,'蓝色=IFRS归母净利润 | 绿色=Non-IFRS净利润',c.W-10,10,'#94a3b8',10,'right');
+  _txt(c,'来源: NVIDIA SEC 10-K',c.W-10,24,'#94a3b8',10,'right');}
+
+// 图表3: 业务分部饼图 (FY2025)
+function r3(){var c=_cc('c-seg-pie');if(!c)return;drawPie(c,[1152,113,19,11],['数据中心','游戏','专业可视化','汽车'],['#1e3a5f','#38a169','#0ea5e9','#f59e0b']);}
+
+// 图表4: 修正PE趋势
+function r4(){var c=_cc('c-adjpe');if(!c)return;drawBar(c,['FY23','FY24','FY25','当前(FY26)','Forward'],
+  [163,54,42,41,24],['#94a3b8','#1e3a5f','#1e3a5f','#e53e3e','#38a169'],0,180,5,true);
+  _txt(c,'修正PE=(市值+有息负债-净现金)/净利润 | 来源: NVIDIA 10-K + StockAnalysis',c.W-10,10,'#94a3b8',10,'right');}
+
+// 图表5: 资产负债趋势
+function r5(){var c=_cc('c-bal');if(!c)return;
+  drawDualBar(c,['FY24','FY25'],
+    [[175,524],[451,729]],['#38a169','#1e3a5f'],0,800,5);
+  _txt(c,'绿色=净现金(现金+投资) | 深蓝=有息负债 | 来源: NVIDIA 10-K',c.W-10,10,'#94a3b8',10,'right');}
+
+// 图表6: 现金流趋势
+function r6(){var c=_cc('c-cf');if(!c)return;
+  drawDualBar(c,['FY24','FY25','FY26'],
+    [[295,586,960],[284,560,902]],['#1e3a5f','#38a169'],0,1100,5);
+  _txt(c,'深蓝=经营现金流 | 绿色=自由现金流 | 来源: NVIDIA 10-K',c.W-10,10,'#94a3b8',10,'right');}
+
+// 图表7: 应收款趋势
+function r7(){var c=_cc('c-ar');if(!c)return;
+  drawLine(c,[3.7,8.7,13.8,16.9],'#f59e0b',0,20,5,true,['FY23','FY24','FY25','FY26']);
+  _txt(c,'应收款/净现金: 12.2% (FY26) — 商业模式极强，上游议价能力卓越 | 来源: NVIDIA 10-K',c.W/2,10,'#f59e0b',10,'center');}
+
+// 图表8: 季度营收
+function r8(){var c=_cc('c-qrev');if(!c)return;drawBar(c,["'24Q4","'25Q1","'25Q2","'25Q3","'25Q4","'26Q1","'26Q2","'26Q3","'26Q4"],
+  [22.1,26.0,30.0,35.1,39.3,43.5,50.8,57.0,68.1],['#1e3a5f'],0,80,5,true);
+  _txt(c,"FY26 Q4: $681亿 (+73% YoY) | 来源: NVIDIA FY26 Q4财报 2026-02-25",c.W/2,10,'#e53e3e',11,'center');}
+
+// 图表9: 毛利率趋势
+function r9(){var c=_cc('c-mgn');if(!c)return;
+  drawLine(c,[56.8,72.7,75.0,73.4,75.0],'#38a169',50,80,5,true,['FY23','FY24','FY25','FY26Q3','FY26Q4']);
+  _txt(c,'FY26 Q4 GAAP毛利率 75.0% | Non-GAAP: 75.2% | 历史新高 | 来源: NVIDIA官方',c.W/2,10,'#38a169',10,'center');}
+
+// 图表10: EPS趋势
+function r10(){var c=_cc('c-eps');if(!c)return;
+  drawLine(c,[0.18,1.19,2.94,4.90],'#0ea5e9',0,6,5,true,['FY23','FY24','FY25','FY26']);
+  _txt(c,'GAAP EPS FY26: $4.90 (+67%) | Non-GAAP: $4.77 | 来源: NVIDIA 10-K + Q4财报',c.W/2,10,'#0ea5e9',10,'center');}
+
+// 图表11: DCF三情景
+function r11(){var c=_cc('c-dcf');if(!c)return;
+  var bars=[{v:145,c:'#e53e3e',l:'悲观 $145'},{v:202,c:'#f59e0b',l:'中性 $202'},{v:265,c:'#38a169',l:'乐观 $265'}];
+  bars.forEach(function(b,i){
+    var h=b.v/300*(c.H-60),y=c.H-30-h,x=c.W/4+i*(c.W/3.5);
+    _rect(c,x,y,c.W/5.5,h,b.c);
+    _txt(c,b.l,x+c.W/11,y-8,b.c,11,'center');
+    _txt(c,i===0?'-27%':'当前:$198.87',x+c.W/11,y+h/2,'#fff',11,'center');
+  });
+  _txt(c,'DCF三情景估值 | 来源: Dumont IR量化模型',c.W-10,c.H-10,'#94a3b8',10,'right');}
+
+// 图表12: 风险热力图
+function r12(){var c=_cc('c-risk');if(!c)return;
   var risks=['中国出口管制','AMD/谷歌竞争','宏观利率风险','技术替代风险','供应链集中','AI需求峰值','监管反垄断','估值过高'];
-  var prob=[70,55,40,35,30,45,25,60];
-  var impact=[80,70,65,60,50,75,40,55];
-  var rows=['风险类型'];var cols=['概率','影响','风险分'];
-  var data=[prob,impact,prob.map(function(p,i){return p*impact[i]/100})];
-  var scols=['#c53030','#92400e'];
-  drawHeatmap(c,risks,cols,data,scols);
-}
+  var prob=[70,55,40,35,30,45,25,60],impact=[80,70,65,60,50,75,40,55];
+  var cols=['风险类型','概率%','影响%','风险分'],cw=c.W/4,ch=(c.H-20)/9;
+  risks.forEach(function(r,ri){_txt(c,r,5,ri*ch+ch/2,'#333',10);for(var ci=0;ci<3;ci++){var v=ci===0?prob[ri]:ci===1?impact[ri]:Math.round(prob[ri]*impact[ri]/100);var col2=ci===2?(v>=50?'#c53030':v>=25?'#f59e0b':'#38a169'):'#64748b';_rect(c,ci*cw+90,ri*ch,Math.max(cw-2,0),ch-2,col2,.75);_txt(c,v+(ci<2?'%':''),90+ci*cw+cw/2,ri*ch+ch/2,'#fff',10,'center')}});}
 
-// --- 图表13: 综合风险评分 ---
-function render_risk_gauge(){
-  var c=_cc('c-risk-gauge');if(!c)return;
-  drawGauge(c,3.8,10,'#f59e0b');
-  _txt(c,'综合风险评分: 3.8/10 (低-中)',c.W/2,18,'#64748b',11,'center');
-}
+// 图表13: 综合风险仪表盘
+function r13(){var c=_cc('c-rgauge');if(!c)return;drawGauge(c,3.8,10,'#f59e0b','综合风险 3.8/10');}
 
-// --- 图表14: 机构评级分布 ---
-function render_rating_pie(){
-  var c=_cc('c-rating-pie');if(!c)return;
-  drawPie(c,[32,5,2],['强烈买入','买入','持有'],[
-    '#38a169','#0ea5e9','#f59e0b']);
-  _txt(c,'32家强烈买入 | 5家买入 | 2家持有 | 来源:39机构综合',c.W/2,c.H-10,'#64748b',10,'center');
-}
+// 图表14: 机构评级饼图
+function r14(){var c=_cc('c-rating');if(!c)return;drawPie(c,[32,5,2],['强烈买入','买入','持有'],['#38a169','#0ea5e9','#f59e0b']);}
 
-// --- 图表15: 目标价分布 ---
-function render_target(){
-  var c=_cc('c-target');if(!c)return;
-  var targets=[240,255,260,270,280,300];
-  var labels=['Barclays $240','高盛 $255','MS $260','汇丰 $270','-','-'];
-  drawBar(c,labels,targets,['#0ea5e9'],5,0,350);
+// 图表15: 目标价分布
+function r15(){var c=_cc('c-target');if(!c)return;drawBar(c,['Barclays','高盛','MS','汇丰','Oppenheimer','Needham'],
+  [240,255,260,270,280,290],['#0ea5e9'],0,350,5,true);
   _line(c,40,10,c.W-10,10,'#1e3a5f',2);
-  _txt(c,'$264.54(均值)',c.W-10,10,'#e53e3e',11,'right');
-}
+  _txt(c,'均值$264.54(+33%) | 来源: 39机构综合 | StockAnalysis',c.W/2,10,'#e53e3e',10,'center');}
 
-// --- 图表16: 14人投票分布 ---
-function render_vote(){
-  var c=_cc('c-vote');if(!c)return;
-  drawPie(c,[11,3,0],['强烈买入(11票)','持有(3票)','卖出(0票)'],['#38a169','#f59e0b','#e53e3e']);
-  _txt(c,'强烈买入 78.6% | 持有 21.4% | 卖出 0%',c.W/2,c.H-10,'#1e3a5f',12,'center');
-}
+// 图表16: 14人投票
+function r16(){var c=_cc('c-vote');if(!c)return;drawPie(c,[11,3,0],['强烈买入(11票)','持有(3票)','卖出(0票)'],['#38a169','#f59e0b','#e53e3e']);}
 
-// --- 图表17: Buffett评分雷达 ---
-function render_buffett(){
-  var c=_cc('c-buffett');if(!c)return;
-  drawRadar(c,['护城河','定价权','ROIC','债务安全','管理层'],
-    [.98,.98,.98,.85,.98],[
-      'rgba(30,58,95,0.3)','#1e3a5f']);
-}
+// 图表17: Buffett雷达
+function r17(){var c=_cc('c-buffett');if(!c)return;drawRadar(c,['护城河','定价权','ROIC','债务安全','管理层'],[.98,.98,.98,.85,.98],['rgba(30,58,95,0.3)','#1e3a5f']);}
 
-// --- 汇总触发 ---
 function initAll(){
-  render_rev();
-  render_netprofit();
-  render_seg_pie();
-  render_seg_trend();
-  render_quarter_rev();
-  render_margin();
-  render_eps();
-  render_balance();
-  render_cashflow();
-  render_pe();
-  render_dcf();
-  render_risk();
-  render_risk_gauge();
-  render_rating_pie();
-  render_target();
-  render_vote();
-  render_buffett();
+  r1();r2();r3();r4();r5();r6();r7();r8();r9();r10();r11();r12();r13();r14();r15();r16();r17();
 }
 
-</script>
-<script>
-initAll();
+window.addEventListener('load', function(){
+  setTimeout(initAll, 150);
+});
 </script>
 </body>
 </html>
